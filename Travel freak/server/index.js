@@ -17,8 +17,8 @@ app.use(cors());
 app.use('/posts', postRoutes);
 
 app.get('/',(req,res)=>{
-  res.send('hello to travelfreak api')
-})
+  res.send('hello to travelfreak api');
+});
 
 const PORT = process.env.PORT || 5000;
 
