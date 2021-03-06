@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
     padding: '10px 50px',
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    color: 'rgb(9, 5, 0)',
     textDecoration: 'none',
   },
   image: {
@@ -27,6 +27,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     width: '400px',
+    color: 'teal'
   },
   userName: {
     display: 'flex',
