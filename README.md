@@ -1,7 +1,6 @@
 # Travel freak
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+<a href="https://ibb.co/NF2N9HP"><img src="https://i.ibb.co/ZfzgBkP/Capture.png" alt="Capture" border="0" /></a>
 
 
 
