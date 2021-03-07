@@ -1,6 +1,6 @@
 # Travel freak
 
-[![Header](https://ibb.co/NF2N9HP)
+[![Header](https://ibb.co/NF2N9HP)]
 
 
 
