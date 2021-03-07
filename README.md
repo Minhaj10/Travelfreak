@@ -1,7 +1,6 @@
 # Travel freak
 
-![Project Image]
-(https://pasteboard.co/JRuzFCq.png)
+![Project Image](https://pasteboard.co/JRuzFCq.png)
 
 
 
