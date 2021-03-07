@@ -36,13 +36,13 @@ In this project different languages and frameworks are used for designing the fr
 
 #### Libraries or frameworks
 
-- **Html & CSS **
+- **Html & CSS**
 
-- **JavaScript **
+- **JavaScript**
 
-- **React **
+- **React**
 
-- **Redux **
+- **Redux**
 
 - **Nodejs** 
 
