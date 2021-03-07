@@ -1,6 +1,6 @@
 # Travel freak
 
-![Project Image](project-image-url)
+![Project Image](https://ibb.co/NF2N9HP)
 
 
 
