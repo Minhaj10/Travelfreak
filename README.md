@@ -79,7 +79,10 @@ For running on localhost you need to install VScode.
 
 ## Author Info
 
-- Twitter - [@jamesqquick](https://twitter.com/Minhaj_umid_10?s=09)
-- Linkdin - [James Q Quick](https://jamesqquick.com)
+<p align="center">
+<a href="https://www.linkedin.com/in/minhajumid"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Minhaj%20ahmed%20umid-blue?style=flat-square&logo=linkedin"></a>
+<a href="https://www.instagram.com/umid_101010/"><img alt="Instagram" src="https://img.shields.io/badge/Instagram-umid_101010-blue?style=flat-square&logo=instagram"></a>
+<a href="mailto:minhajumid987@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-minhajumid987@gmail.com-blue?style=flat-square&logo=gmail"></a>
+</p>
 
 [Back To The Top](#read-me-template)
