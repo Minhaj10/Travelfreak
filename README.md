@@ -2,12 +2,6 @@
 
 <a href="https://ibb.co/NF2N9HP"><img src="https://i.ibb.co/ZfzgBkP/Capture.png" alt="Capture" border="0" /></a>
 <br>
-<a href="https://ibb.co/5cKyN1d"><img src="https://i.ibb.co/MNB4Ygb/Captureq.png" alt="Captureq" border="0"></a>
-<br>
-<a href="https://ibb.co/80Xkpg1"><img src="https://i.ibb.co/g36YpZk/Capdcfdfture.png" alt="Capdcfdfture" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a>
-<br>
-
-
 
 ---
 
