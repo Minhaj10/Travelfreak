@@ -1,6 +1,7 @@
 # Travel freak
 
-[![Header](https://ibb.co/NF2N9HP)]
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
 
 
 
