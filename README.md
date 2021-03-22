@@ -64,6 +64,19 @@ For running on localhost you need to install VScode.
 
 ---
 
+#### Future Enhancement
+
+<br>
+:arrow_right: In future we can add feature like add friends.By adding friends we can make friends & only friend posts are available in home page.
+<br>
+:arrow_right: We can add chat feature so that we can chat with friends privately.
+<br>
+:arrow_right: We can create separate profile section for all user.
+<br>
+
+[Back To The Top](#read-me-template)
+
+---
 
 ## Author Info
 
