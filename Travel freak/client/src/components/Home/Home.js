@@ -22,16 +22,22 @@ const Home = () => {
   const searchQuery= query.get('searchQuery');
   const classes =useStyles();
   const [search, setsearch] = useState('');
+  const [tags, settags] = useState([]);
 
   useEffect(() => {
     dispatch(getPosts());
   }, [currentId, dispatch]);
 
   const handleKeyPress=(e)=>{
+    //keycode 13 means -> enter key
         if(e.KeyCode===13){
-          
+            //logic
         }
   }
+
+  const handleAdd=(tag)=> settags([...tags,tag])
+
+  const handleDelete=(tagToDelete)=> settags(tags.filter((tag)=> tag!= tagToDelete));
 
   return (
     <Grow in>
@@ -47,6 +53,14 @@ const Home = () => {
                 onKeyPress={handleKeyPress}
                 value={search}
                 onChange={(e)=>{setsearch(e.target.value)}}/>
+                <ChipInput
+                style={{margin :'10px 0'}}
+                value={tags}
+                onAdd={handleAdd}
+                onDelete={handleDelete}
+                label="Search by tags"
+                variant="outlined"
+                />
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             <Paper  elevation={6}>
