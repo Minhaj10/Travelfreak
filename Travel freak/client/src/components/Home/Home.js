@@ -21,7 +21,7 @@ const Home = () => {
   const page = query.get('page') || 1;
   const searchQuery= query.get('searchQuery');
   const classes =useStyles();
-
+  const [search, setsearch] = useState('');
 
   useEffect(() => {
     dispatch(getPosts());
@@ -38,8 +38,8 @@ const Home = () => {
             <AppBar className={classes.appBarSearch} position ="static" color="inherit">
                 <TextField name ="search" variant="outlined" label ="Search for places"
                 fullWidth
-                value="TEST"
-                onChange={()=>{}}/>
+                value={search}
+                onChange={(e)=>{setsearch(e.target.value)}}/>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             <Paper  elevation={6}>
