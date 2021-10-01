@@ -28,6 +28,11 @@ const Home = () => {
     dispatch(getPosts());
   }, [currentId, dispatch]);
 
+  const searchPost=()=>{
+    if(search.trim()){
+      //logic
+    }
+  }
   const handleKeyPress=(e)=>{
     //keycode 13 means -> enter key
         if(e.KeyCode===13){
@@ -61,6 +66,7 @@ const Home = () => {
                 label="Search by tags"
                 variant="outlined"
                 />
+                <button onClick={searchPost} className={classes.searchButton} color="primary">Search</button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             <Paper  elevation={6}>
