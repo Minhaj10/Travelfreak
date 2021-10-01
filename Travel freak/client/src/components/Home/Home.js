@@ -27,6 +27,12 @@ const Home = () => {
     dispatch(getPosts());
   }, [currentId, dispatch]);
 
+  const handleKeyPress=(e)=>{
+        if(e.KeyCode===13){
+          
+        }
+  }
+
   return (
     <Grow in>
       <Container maxWidth="xl">
@@ -38,6 +44,7 @@ const Home = () => {
             <AppBar className={classes.appBarSearch} position ="static" color="inherit">
                 <TextField name ="search" variant="outlined" label ="Search for places"
                 fullWidth
+                onKeyPress={handleKeyPress}
                 value={search}
                 onChange={(e)=>{setsearch(e.target.value)}}/>
             </AppBar>
