@@ -32,11 +32,14 @@ const Home = () => {
     if(search.trim()){
       //logic
     }
+    else{
+      history.push('/');
+    }
   }
   const handleKeyPress=(e)=>{
     //keycode 13 means -> enter key
         if(e.KeyCode===13){
-            //logic
+            searchPost();
         }
   }
 
