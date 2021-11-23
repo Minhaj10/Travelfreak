@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grow, Grid ,Paper, AppBar,Button,TextField} from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import  Pagination  from '../Pagination.jsx';
-import { getPosts } from '../../actions/posts';
+import { getPosts,getPostsBySearch } from '../../actions/posts';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import { useHistory,useLocation } from 'react-router-dom';
@@ -30,7 +30,7 @@ const Home = () => {
 
   const searchPost=()=>{
     if(search.trim()){
-      //logic
+      dispatch(getPostsBySearch({ search ,tags:tags.join(',')}))
     }
     else{
       history.push('/');
