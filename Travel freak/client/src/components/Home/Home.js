@@ -48,12 +48,13 @@ const Home = () => {
   return (
     <Grow in>
       <Container maxWidth="xl">
-        <Grid container justify="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-          <Grid item xs={12} sm={6} md={9}>
-            <Posts setCurrentId={setCurrentId} />
+        <Grid container justify="space-around" alignItems="center" spacing={3} className={classes.gridContainer}>
+          <Grid item xs={12} sm={8} md={6}>
+          <Form currentId={currentId} setCurrentId={setCurrentId} />
+          
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <AppBar className={classes.appBarSearch} position="static" color="inherit">
+          <AppBar className={classes.appBarSearch} position="static" color="inherit">
               <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Posts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
               <ChipInput
                 style={{ margin: '10px 0' }}
@@ -65,7 +66,17 @@ const Home = () => {
               />
               <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
             </AppBar>
-            <Form currentId={currentId} setCurrentId={setCurrentId} />
+          
+          </Grid>
+
+
+          <Grid item xs={12} sm={9} md={9}>
+          
+            <Posts setCurrentId={setCurrentId} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            
+            
             {(!searchQuery && !tags.length) && (
               <Paper className={classes.pagination} elevation={6}>
                 <Pagination page={page} />

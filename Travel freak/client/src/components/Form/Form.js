@@ -62,7 +62,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">{currentId ? `Editing "${post?.title}"` : 'Creating a Post'}</Typography>
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
         <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
-        <div style={{ padding: '5px 0', width: '94%' }}>
+        <div style={{ padding: '5px 0', width: '98%' }}>
           <ChipInput
             name="tags"
             variant="outlined"
