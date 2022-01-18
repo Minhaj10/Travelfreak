@@ -4,12 +4,23 @@ import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-
+import FlightIcon from '@material-ui/icons/Flight';
 import Icon from './icon';
 import { signin, signup } from '../../actions/auth';
 import { AUTH } from '../../constants/actionTypes';
 import useStyles from './styles';
 import Input from './Input';
+import { purple,pink,orange } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: pink[800],
+  '&:hover': {
+    backgroundColor: orange[600],
+  },
+}));
+
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
@@ -60,7 +71,7 @@ const SignUp = () => {
     <Container component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={6}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <FlightIcon  />
         </Avatar>
         <Typography component="h1" variant="h5">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
@@ -75,15 +86,15 @@ const SignUp = () => {
             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
           </Grid>
-          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+          <ColorButton type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             { isSignup ? 'Sign Up' : 'Sign In' }
-          </Button>
+          </ColorButton>
           <GoogleLogin
             clientId="564033717568-bu2nr1l9h31bhk9bff4pqbenvvoju3oq.apps.googleusercontent.com"
             render={(renderProps) => (
-              <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
+              <ColorButton className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
                 Google Sign In
-              </Button>
+              </ColorButton>
             )}
             onSuccess={googleSuccess}
             onFailure={googleError}

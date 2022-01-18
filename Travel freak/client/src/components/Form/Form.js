@@ -7,6 +7,24 @@ import ChipInput from 'material-ui-chip-input';
 
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
+import { purple,pink,orange,blueGrey } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: pink[800],
+  '&:hover': {
+    backgroundColor: orange[600],
+  },
+}));
+
+const ClearButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(blueGrey[500]),
+  backgroundColor: blueGrey[900],
+  '&:hover': {
+    backgroundColor: blueGrey[500],
+  },
+}));
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ title: '', message: '', tags: [], selectedFile: '' });
@@ -74,8 +92,8 @@ const Form = ({ currentId, setCurrentId }) => {
           />
         </div>
         <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
-        <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-        <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+        <ColorButton className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</ColorButton>
+        <ClearButton variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</ClearButton>
       </form>
     </Paper>
   );

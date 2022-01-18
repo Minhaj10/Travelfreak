@@ -1,4 +1,19 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { purple,pink } from '@mui/material/colors';
+
+import { createTheme } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+    secondary: {
+      main: '#f44336',
+    },
+  },
+});
 
 export default makeStyles((theme) => ({
   paper: {
@@ -15,7 +30,7 @@ export default makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: pink[800],
   },
   form: {
     width: '100%', // Fix IE 11 issue.

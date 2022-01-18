@@ -10,6 +10,19 @@ import Form from '../Form/Form';
 import Pagination from '../Pagination';
 import useStyles from './styles';
 
+
+import { purple,pink,orange } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: pink[800],
+  '&:hover': {
+    backgroundColor: orange[600],
+  },
+}));
+
+
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -57,14 +70,14 @@ const Home = () => {
           <AppBar className={classes.appBarSearch} position="static" color="inherit">
               <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Posts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
               <ChipInput
-                style={{ margin: '10px 0' }}
+                style={{ margin: '10px 0',color: 'purple' }}
                 value={tags}
                 onAdd={(chip) => handleAddChip(chip)}
                 onDelete={(chip) => handleDeleteChip(chip)}
                 label="Search Tags"
                 variant="outlined"
               />
-              <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
+              <ColorButton onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</ColorButton>
             </AppBar>
           
           </Grid>

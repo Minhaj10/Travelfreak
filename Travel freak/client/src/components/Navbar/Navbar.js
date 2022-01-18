@@ -8,6 +8,17 @@ import memoriesLogo from '../../images/logo.png';
 import mainlogo from '../../images/logo.png';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
+import { purple,pink,orange } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: pink[800],
+  '&:hover': {
+    backgroundColor: orange[600],
+  },
+}));
+
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -53,7 +64,7 @@ const Navbar = () => {
             <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
         ) : (
-          <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+          <ColorButton component={Link} to="/auth" variant="contained" color="primary">Sign In</ColorButton>
         )}
       </Toolbar>
     </AppBar>

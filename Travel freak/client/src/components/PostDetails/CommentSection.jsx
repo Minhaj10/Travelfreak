@@ -4,6 +4,17 @@ import { useDispatch } from 'react-redux';
 
 import { commentPost } from '../../actions/posts';
 import useStyles from './styles';
+import { purple,pink,orange } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: pink[800],
+  '&:hover': {
+    backgroundColor: orange[600],
+  },
+}));
+
 
 const CommentSection = ({ post }) => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -39,9 +50,9 @@ const CommentSection = ({ post }) => {
           <Typography gutterBottom variant="h6">Write a comment</Typography>
           <TextField fullWidth rows={4} variant="outlined" label="Comment" multiline value={comment} onChange={(e) => setComment(e.target.value)} />
           <br />
-          <Button style={{ marginTop: '10px' }} fullWidth disabled={!comment.length} color="primary" variant="contained" onClick={handleComment}>
+          <ColorButton style={{ marginTop: '10px' }} fullWidth disabled={!comment.length} color="primary" variant="contained" onClick={handleComment}>
             Comment
-          </Button>
+          </ColorButton>
         </div>
       </div>
     </div>
