@@ -4,6 +4,17 @@
 <br>
 
 ---
+## Sample UI 
+
+### Signup
+![tsignup](https://user-images.githubusercontent.com/43043473/150315443-f8a697bd-097f-4973-89c6-c1670c010cb9.PNG)
+### Signin
+![tsigin](https://user-images.githubusercontent.com/43043473/150317337-71f20136-6805-4859-81a2-d23fc51e708d.PNG)
+### Create Post
+![tcreatpost](https://user-images.githubusercontent.com/43043473/150317500-aadbf828-de94-4ac9-bcbd-3c72c4a11774.PNG)
+
+### Post
+![tposts](https://user-images.githubusercontent.com/43043473/150317654-e0e69814-d791-49db-bded-8842eda10e8c.PNG)
 
 ### Table of Contents
 Sections headers will be used to reference location of destination.
