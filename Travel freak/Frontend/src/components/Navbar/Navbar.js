@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 import memoriesLogo from "../../images/logo.png";
 import LocalAirportIcon from "@material-ui/icons/LocalAirport";
-import  ExitToAppIcon  from "@material-ui/icons/ExitToApp";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import mainlogo from "../../images/logo.png";
 import * as actionType from "../../constants/actionTypes";
 import useStyles from "./styles";
@@ -82,13 +82,18 @@ const Navbar = () => {
                         >
                             {user?.result.name.charAt(0)}
                         </Avatar>
-                        <Typography
-                            className={classes.userName}
-                            variant="h6"
-                            style={{ color: "#22556B" }}
-                        >
-                            {user?.result.name}
+                        <Typography variant="h6">
+                            <Link
+                                style={{
+                                    color: "#22556B",
+                                    textDecoration: "none",
+                                }}
+                                to={`/creators/${user?.result.name}`}
+                            >
+                                {user?.result.name}
+                            </Link>
                         </Typography>
+
                         <Button
                             variant="contained"
                             className={classes.logout}

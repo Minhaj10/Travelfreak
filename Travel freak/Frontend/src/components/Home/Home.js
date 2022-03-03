@@ -71,13 +71,14 @@ const Home = () => {
 
     return (
         <Grow in>
-            <Container maxWidth="xxl">
+            <Container maxWidth="xl">
                 <Grid
                     container
-                    justify="space-around"
-                    alignItems="center"
+                    justify="space-between"
+                    alignItems="stretch"
                     spacing={3}
                     className={classes.gridContainer}
+                    style={{flexBasis: "100%"}}
                 >
                     <div
                         style={{
@@ -93,49 +94,49 @@ const Home = () => {
                             />
                         </Grid>
                     </div>
-                    
-                        <Grid item xs={12} sm={6} md={3}>
-                            <AppBar
-                                className={classes.appBarSearch}
-                                position="static"
-                                color="inherit"
-                            >
-                                <TextField
-                                    onKeyDown={handleKeyPress}
-                                    name="search"
-                                    variant="outlined"
-                                    label="Search Posts"
-                                    fullWidth
-                                    value={search}
-                                    onChange={(e) => setSearch(e.target.value)}
-                                />
-                                <ChipInput
-                                    style={{
-                                        margin: "10px 0",
-                                        color: "purple",
-                                    }}
-                                    value={tags}
-                                    onAdd={(chip) => handleAddChip(chip)}
-                                    onDelete={(chip) => handleDeleteChip(chip)}
-                                    label="Search Tags"
-                                    variant="outlined"
-                                />
-                                <ColorButton
-                                    onClick={searchPost}
-                                    className={classes.searchButton}
-                                    variant="contained"
-                                    color="primary"
-                                >
-                                    Search
-                                </ColorButton>
-                            </AppBar>
-                        </Grid>
-                    
 
-                    <Grid item xs={16} sm={9} md={6}>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <AppBar
+                            className={classes.appBarSearch}
+                            position="static"
+                            color="inherit"
+                        >
+                            <TextField
+                                onKeyDown={handleKeyPress}
+                                name="search"
+                                variant="outlined"
+                                label="Search Posts"
+                                fullWidth
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                            <ChipInput
+                                style={{
+                                    margin: "10px 0",
+                                    color: "purple",
+                                }}
+                                value={tags}
+                                onAdd={(chip) => handleAddChip(chip)}
+                                onDelete={(chip) => handleDeleteChip(chip)}
+                                label="Search Tags"
+                                variant="outlined"
+                            />
+                            <ColorButton
+                                onClick={searchPost}
+                                className={classes.searchButton}
+                                variant="contained"
+                                color="primary"
+                            >
+                                Search
+                            </ColorButton>
+                        </AppBar>
+                    </Grid>
+
+                    <Grid item xs={12} sm={6} md={12}>
                         <Posts setCurrentId={setCurrentId} />
                     </Grid>
                 </Grid>
+
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <Grid item xs={12} sm={6} md={6}>
                         {!searchQuery && !tags.length && (

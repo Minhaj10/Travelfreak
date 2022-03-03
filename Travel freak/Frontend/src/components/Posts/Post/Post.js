@@ -61,8 +61,8 @@ const Post = ({ post, setCurrentId }) => {
 
         return (
             <>
-                <ThumbUpAltOutlined fontSize="small" />
-                &nbsp;Like
+                <StarBorderIcon fontSize="small" />
+                &nbsp;Star
             </>
         );
     };
