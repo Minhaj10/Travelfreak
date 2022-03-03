@@ -23,9 +23,9 @@ import { styled } from "@mui/material/styles";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: pink[800],
+    backgroundColor: "#22556B",
     "&:hover": {
-        backgroundColor: orange[600],
+        backgroundColor: "#103B4D",
     },
 }));
 
@@ -71,7 +71,7 @@ const Home = () => {
 
     return (
         <Grow in>
-            <Container maxWidth="xl">
+            <Container maxWidth="xxl">
                 <Grid
                     container
                     justify="space-around"
@@ -84,16 +84,16 @@ const Home = () => {
                             display: "flex",
                             flexWrap: "wrap",
                             justifyContent: "center",
-                            gap: "10px",
                         }}
                     >
-                        <Grid item xs={12} sm={8} md={6}>
+                        <Grid item xs={16} sm={12} md={12}>
                             <Form
                                 currentId={currentId}
                                 setCurrentId={setCurrentId}
                             />
                         </Grid>
-
+                    </div>
+                    
                         <Grid item xs={12} sm={6} md={3}>
                             <AppBar
                                 className={classes.appBarSearch}
@@ -130,9 +130,9 @@ const Home = () => {
                                 </ColorButton>
                             </AppBar>
                         </Grid>
-                    </div>
+                    
 
-                    <Grid item xs={9} sm={6} md={6}>
+                    <Grid item xs={16} sm={9} md={6}>
                         <Posts setCurrentId={setCurrentId} />
                     </Grid>
                 </Grid>

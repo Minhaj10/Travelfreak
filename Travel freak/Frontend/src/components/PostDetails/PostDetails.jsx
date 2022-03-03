@@ -52,7 +52,7 @@ const Post = () => {
     <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" component="h2">{post.title}</Typography>
+          <Typography variant="h3" component="h2" style={{color: "#22556B"}}>{post.title}</Typography>
           <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => (
             <Link to={`/tags/${tag}`} style={{ textDecoration: 'none', color: '#3f51b5' }}>
               {` #${tag} `}
@@ -61,7 +61,7 @@ const Post = () => {
           </Typography>
           <Typography gutterBottom variant="body1" component="p">{post.message}</Typography>
           <Typography variant="h6">
-            Created by:
+            Posted by:
             <Link to={`/creators/${post.name}`} style={{ textDecoration: 'none', color: '#3f51b5' }}>
               {` ${post.name}`}
             </Link>

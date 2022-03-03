@@ -4,17 +4,67 @@ import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 import { useHistory } from "react-router-dom";
 import ChipInput from "material-ui-chip-input";
-
+import { withStyles } from "@material-ui/core/styles";
 import { createPost, updatePost } from "../../actions/posts";
 import useStyles from "./styles";
 import { purple, pink, orange, blueGrey } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 
+const WhiteTextTypography = withStyles({
+    root: {
+        color: "#22556B",
+    },
+})(Typography);
+
+const CssTextField = withStyles({
+    root: {
+        "& label.Mui-focused": {
+            color: "#22556B",
+        },
+        "& .MuiInput-underline:after": {
+            borderBottomColor: "#9A9A9A",
+        },
+        "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+                borderColor: "#22556B",
+            },
+            "&:hover fieldset": {
+                borderColor: "#22556B",
+            },
+            "&.Mui-focused fieldset": {
+                borderColor: "#9A9A9A",
+            },
+        },
+    },
+})(TextField);
+
+const CssChipInput = withStyles({
+    root: {
+        "& label.Mui-focused": {
+            color: "#22556B",
+        },
+        "& .MuiInput-underline:after": {
+            borderBottomColor: "#9A9A9A",
+        },
+        "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+                borderColor: "#22556B",
+            },
+            "&:hover fieldset": {
+                borderColor: "#22556B",
+            },
+            "&.Mui-focused fieldset": {
+                borderColor: "#9A9A9A",
+            },
+        },
+    },
+})(ChipInput);
+
 const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: pink[800],
+    backgroundColor: "#22556B",
     "&:hover": {
-        backgroundColor: orange[600],
+        backgroundColor: "#103B4D",
     },
 }));
 
@@ -92,26 +142,48 @@ const Form = ({ currentId, setCurrentId }) => {
     };
 
     return (
-        <Paper className={classes.paper} elevation={6}>
-            <form
-                autoComplete="off"
-                noValidate
-                className={`${classes.root} ${classes.form}`}
-                onSubmit={handleSubmit}
+        <form
+            autoComplete="off"
+            noValidate
+            className={`${classes.root} ${classes.form}`}
+            onSubmit={handleSubmit}
+        >
+            <Paper
+                className={classes.paper}
+                elevation={6}
+                style={{
+                    backgroundColor: "white",
+                    boxShadow: "0 0 3px 3px white",
+                }}
             >
                 <div
-                    style={{ display: "flex",flexWrap: "wrap", justifyContent: "space-around" }}
+                    style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "space-around",
+                        gap: "130px",
+                    }}
                 >
                     <div>
-                        <Typography variant="h6">
+                        <WhiteTextTypography
+                            variant="h6"
+                            style={{ colour: "#22556B" }}
+                        >
                             {currentId
                                 ? `Editing "${post?.title}"`
                                 : "Creating a Post"}
-                        </Typography>
-                        <TextField
+                        </WhiteTextTypography>
+                        <CssTextField
                             name="title"
                             variant="outlined"
-                            label="Title"
+                            label="Headline"
+                            sx={{ input: { color: "red" } }}
+                            InputLabelProps={{
+                                style: { color: "#22556B" },
+                                root: {
+                                    color: "purple",
+                                },
+                            }}
                             fullWidth
                             value={postData.title}
                             onChange={(e) =>
@@ -121,13 +193,16 @@ const Form = ({ currentId, setCurrentId }) => {
                                 })
                             }
                         />
-                        <TextField
+                        <CssTextField
                             name="message"
                             variant="outlined"
-                            label="Message"
+                            label="Whats on your mind?"
                             fullWidth
                             multiline
                             rows={4}
+                            InputLabelProps={{
+                                style: { color: "#22556B" },
+                            }}
                             value={postData.message}
                             onChange={(e) =>
                                 setPostData({
@@ -137,11 +212,18 @@ const Form = ({ currentId, setCurrentId }) => {
                             }
                         />
                         <div style={{ padding: "5px 0", width: "98%" }}>
-                            <ChipInput
+                            <CssChipInput
                                 name="tags"
                                 variant="outlined"
-                                label="Tags"
+                                label="HashTags"
+                                style={{ borderBlockColor: "purple" }}
                                 fullWidth
+                                InputLabelProps={{
+                                    style: {
+                                        color: "#22556B",
+                                        borderColor: "white",
+                                    },
+                                }}
                                 value={postData.tags}
                                 onAdd={(chip) => handleAddChip(chip)}
                                 onDelete={(chip) => handleDeleteChip(chip)}
@@ -150,6 +232,9 @@ const Form = ({ currentId, setCurrentId }) => {
                         <div className={classes.fileInput}>
                             <FileBase
                                 type="file"
+                                InputLabelProps={{
+                                    style: { color: "#22556B" },
+                                }}
                                 multiple={false}
                                 onDone={({ base64 }) =>
                                     setPostData({
@@ -161,30 +246,43 @@ const Form = ({ currentId, setCurrentId }) => {
                         </div>
                     </div>
 
-                    <div>
-                        <ColorButton
-                            className={classes.buttonSubmit}
-                            variant="contained"
-                            color="primary"
-                            size="large"
-                            type="submit"
-                            fullWidth
-                        >
-                            Submit
-                        </ColorButton>
-                        <ClearButton
-                            variant="contained"
-                            color="secondary"
-                            size="small"
-                            onClick={clear}
-                            fullWidth
-                        >
-                            Clear
-                        </ClearButton>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            justifyContent: "center",
+                            gap: "10px",
+                            paddingTop: "300px",
+                        }}
+                    >
+                        <div>
+                            <ClearButton
+                                variant="contained"
+                                color="secondary"
+                                size="small"
+                                onClick={clear}
+                                fullWidth
+                            >
+                                Clear
+                            </ClearButton>
+                        </div>
+
+                        <div>
+                            <ColorButton
+                                className={classes.buttonSubmit}
+                                variant="contained"
+                                color="primary"
+                                size="small"
+                                type="submit"
+                                fullWidth
+                            >
+                                Submit
+                            </ColorButton>
+                        </div>
                     </div>
                 </div>
-            </form>
-        </Paper>
+            </Paper>
+        </form>
     );
 };
 
